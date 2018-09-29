@@ -1,17 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
-  </ion-navbar>
+    <ion-navbar hideBackButton color="primary">
+       <ion-title>Liste</ion-title>
+     </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items | async" (click)="deleteItem(item.key)">
-      {{item.amount + ' ' + item.name}}
-    </button>
+    <ion-item ion-item *ngFor="let item of items | async">
+        <ion-item-sliding>
+          <ion-item>
+              {{item.amount + ' x ' + item.name}}
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button color="danger" (click)="deleteItem(item.key)">Löschen</button>
+          </ion-item-options>
+          <ion-item-options side="right">
+              <button ion-button color="secondary" (click)="deleteItem(item.key)">Erledigt</button>
+            </ion-item-options>
+          </ion-item-sliding>
+    </ion-item>
   </ion-list>
-  <button ion-button secondary full (click)="load()">Item hinzufügen</button>
-</ion-content>
+  <ion-fab bottom right>
+    <button ion-fab class="button" (click)="load()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  </ion-content>

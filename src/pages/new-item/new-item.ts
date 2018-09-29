@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { ListPage } from '../list/list';
+import { GroupsPage } from '../groups/groups';
 
 /**
  * Generated class for the NewItemPage page.
@@ -18,14 +19,7 @@ import { ListPage } from '../list/list';
 })
 export class NewItemPage {
 
-  itemsRef: AngularFireList<any>;
-  groupname: string;
-  listname: string;
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase) {
-    this.groupname = "group 1";
-    this.listname = "list 1";
-    this.itemsRef = afDatabase.list('/groups/' + this.groupname + '/' + this.listname);
   }
 
   ionViewDidLoad() {
@@ -33,7 +27,7 @@ export class NewItemPage {
   }
 
   addItem(newName: string, newAmount: string) {
-    this.itemsRef.push({ name: newName, amount: newAmount });
+    GroupsPage.listitemsRef.push({ name: newName, amount: newAmount });
     this.navCtrl.push(ListPage);
   }
 
