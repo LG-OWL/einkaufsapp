@@ -35,7 +35,6 @@ export class GroupsPage {
   }
 
   createlist(listname: string){
-    GroupsPage.username = "Jonas";
     GroupsPage.listname = listname;
 
     GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
@@ -50,7 +49,6 @@ export class GroupsPage {
   }
 
   joinlist(listname: string){
-    GroupsPage.username = "Neuer User";
     GroupsPage.listname = listname;
 
     // Prüfen, ob die Gruppe existiert
