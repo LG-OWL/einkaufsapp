@@ -22,6 +22,5 @@ export class RegisterPage {
 
   async register(user: User){
     const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password);
-    GroupsPage.username = user.username;
   }
 }

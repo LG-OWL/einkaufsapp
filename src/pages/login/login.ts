@@ -25,6 +25,7 @@ export class LoginPage {
   async login(user:User){
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
+      GroupsPage.username = user.username;
       if(result)
         this.navCtrl.push(GroupsPage);
     }catch(e){

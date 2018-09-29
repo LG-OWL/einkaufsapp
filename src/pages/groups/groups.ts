@@ -37,15 +37,35 @@ export class GroupsPage {
   createlist(listname: string){
     GroupsPage.listname = listname;
 
-    GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
     GroupsPage.listsRef = this.afDatabase.list('/lists');
-    GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
-    GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
 
-    GroupsPage.usersRef.push({ listname: GroupsPage.listname })
-    GroupsPage.listmembersRef.push({ name: GroupsPage.username });   
-
-    this.navCtrl.push(ListPage);
+    // Falls die Liste existiert, Fehlermeldung ausgeben
+    let listfound: boolean = false;
+    let subscription = GroupsPage.listsRef.snapshotChanges().subscribe(actions => { 
+    actions.forEach(action => {
+      if (action.key === listname) {
+        listfound = true;
+      }
+    });
+    
+    // Falls die Liste existiert, dieser beitreten, sonst Fehlermeldung ausgeben
+    if (!listfound) {
+      GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
+      GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
+      GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
+  
+      GroupsPage.usersRef.push({ listname: GroupsPage.listname })
+      GroupsPage.listmembersRef.push({ name: GroupsPage.username }); 
+      
+      subscription.unsubscribe();
+      this.navCtrl.push(ListPage);
+      return;
+    } else {
+      this.showAlert();
+      subscription.unsubscribe();
+      return;
+    }
+  });
   }
 
   joinlist(listname: string){
@@ -86,7 +106,7 @@ export class GroupsPage {
   showAlert() {
     const alert = this.alertCtrl.create({
       title: 'Fehler',
-      subTitle: 'Die Liste konnte nicht gefunden werden.',
+      subTitle: 'Wähle einen anderen Listennamen.',
       buttons: ['OK']
     });
     alert.present();

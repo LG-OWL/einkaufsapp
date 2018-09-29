@@ -9,9 +9,16 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items | async" (click)="deleteItem(item.key)">
-      {{item.amount + ' ' + item.name}}
-    </button>
+    <ion-item ion-item *ngFor="let item of items | async">
+        <ion-item-sliding>
+          <ion-item>
+              {{item.amount + ' x ' + item.name}}
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button color="red" (click)="deleteItem(item.key)">Löschen</button>
+          </ion-item-options>
+          </ion-item-sliding>
+    </ion-item>
   </ion-list>
   <ion-fab bottom right>
     <button ion-fab class="button" (click)="load()"><ion-icon name="add"></ion-icon></button>
