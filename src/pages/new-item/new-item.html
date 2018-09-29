@@ -17,17 +17,17 @@
     <ion-list>
 
         <ion-item>
-          <ion-label fixed>Produkt</ion-label>
-          <ion-input type="text" value=""></ion-input>
+            <ion-label floating>Produkt</ion-label>
+            <ion-input type="text"  #newitemname></ion-input>
         </ion-item>
-      
+
         <ion-item>
-          <ion-label fixed>Anzahl</ion-label>
-          <ion-input type="text" value=""></ion-input>
+            <ion-label floating>Anzahl</ion-label>
+            <ion-input type="text"  #newitemamount></ion-input>
         </ion-item>
       
       </ion-list>
       
-      <button ion-button secondary full >Item hinzufügen </button>
+      <button ion-button secondary full (click)="addItem(newitemname.value, newitemamount.value)">Item hinzufügen </button>
 
 </ion-content>

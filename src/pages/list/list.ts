@@ -10,15 +10,15 @@ import {map} from 'rxjs/operators';
   selector: 'page-list',
   templateUrl: 'list.html'
 })
+
 export class ListPage {
   
   selectedItem: any;
-  //items: Array<{title: string, amount: string}>;
-  itemsRef: AngularFireList<any>;
-  items: Observable<any[]>;
 
+  itemsRef: AngularFireList<any>;
   groupname: string;
   listname: string;
+  items: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase) {
     this.groupname = "group 1";

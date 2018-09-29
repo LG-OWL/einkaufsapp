@@ -9,8 +9,8 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      {{item.amount + ' ' + item.title}}
+    <button ion-item *ngFor="let item of items | async" (click)="deleteItem(item.key)">
+      {{item.amount + ' ' + item.name}}
     </button>
   </ion-list>
   <button ion-button secondary full (click)="load()">Item hinzufügen</button>
