@@ -15,13 +15,13 @@ import { AlertController } from 'ionic-angular';
 
 export class HomePage {
   
-  public static lists: Observable<any[]>;
+  lists: Observable<any[]>;
   listsRef: AngularFireList<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {
     this.listsRef = this.afDatabase.list('/users/' + GroupsPage.username);
 
-    HomePage.lists = this.listsRef.snapshotChanges().pipe(
+    this.lists = this.listsRef.snapshotChanges().pipe(
       map(changes => 
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
@@ -40,5 +40,5 @@ export class HomePage {
   load(){
     this.navCtrl.push(GroupsPage);
   }
-
+  
 }
