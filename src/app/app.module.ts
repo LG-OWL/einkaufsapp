@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { NewItemPage } from '../pages/new-item/new-item';
 import { LoginPage } from '../pages/login/login';
 import { GroupsPage } from '../pages/groups/groups';
 
@@ -21,6 +22,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     MyApp,
     HomePage,
     ListPage,
+    NewItemPage,
     LoginPage,
     GroupsPage
   ],
@@ -36,6 +38,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     MyApp,
     HomePage,
     ListPage,
+    NewItemPage,
     LoginPage,
     GroupsPage
   ],
