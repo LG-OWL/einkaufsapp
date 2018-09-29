@@ -7,24 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Gruppen</ion-title>
+    <ion-title>Liste hinzufügen</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-  <h1>Liste hinzufügen</h1>
   
-  <p>Trete einer Liste bei:</p>
+  <h6>Trete einer Liste bei:</h6>
   <ion-item>
       <ion-label floating>Listenname</ion-label>
       <ion-input type="text" #listnamesearch></ion-input>
   </ion-item>
   <button id="joinlist" ion-button secondary full (click)="joinlist(listnamesearch.value)">Beitreten</button><br> 
 
-  <p>Erstelle deine eigene Liste:</p>
+  <h6>Erstelle eine neue Liste:</h6>
   <ion-item>
       <ion-label floating>Listenname</ion-label>
       <ion-input type="text" #listnamecreate></ion-input>
