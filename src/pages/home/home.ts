@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { GroupsPage } from '../groups/groups';
+import { ScannerPage } from '../scanner/scanner';
 
 @Component({
   selector: 'page-home',
@@ -19,5 +20,9 @@ export class HomePage {
 
   loadGroupPage(){
     this.navCtrl.push(GroupsPage);
+  }
+
+  loadScannerPage(){
+    this.navCtrl.push(ScannerPage);
   }
 }

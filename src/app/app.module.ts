@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { NewItemPage } from '../pages/new-item/new-item';
 import { LoginPage } from '../pages/login/login';
 import { GroupsPage } from '../pages/groups/groups';
+import { ScannerPage } from '../pages/scanner/scanner';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +18,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+// For the OCR (Tesseract)
+import { Camera } from '@ionic-native/camera';
+//import { NgProgressModule } from '@ngx-progressbar/core';
+//import { ScannerPageModule } from '../pages/scanner/scanner.module';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,14 +30,18 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ListPage,
     NewItemPage,
     LoginPage,
-    GroupsPage
+    GroupsPage,
+    ScannerPage
   ],
   imports: [
     BrowserModule,
+    //ScannerPageModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    //NgProgressModule.forRoot()
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,12 +50,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ListPage,
     NewItemPage,
     LoginPage,
-    GroupsPage
+    GroupsPage,
+    ScannerPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera
   ]
 })
 export class AppModule {}
