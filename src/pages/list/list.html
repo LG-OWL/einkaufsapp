@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Einkaufsliste</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -13,5 +13,7 @@
       {{item.amount + ' ' + item.name}}
     </button>
   </ion-list>
-  <button ion-button secondary full (click)="load()">Item hinzufügen</button>
-</ion-content>
+  <ion-fab bottom right>
+    <button ion-fab class="button" (click)="load()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  </ion-content>
