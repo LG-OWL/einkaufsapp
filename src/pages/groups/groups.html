@@ -16,18 +16,19 @@
 <ion-content padding>
 
   <h1>Gruppe hinzufügen</h1>
+  
   <p>Trete einer bereits vorhandenen Gruppe bei:</p>
-  <input type="text" placeholder="Gruppenname#id"><br>
-  <button ion-button>Beitreten</button>
+  <input style="width:100%" id="tfGroupNameExisted" type="text" placeholder="Gruppenname#id"><br><br>
+  <button style="width:100%" id="btnEnterGroup" ion-button>Beitreten</button><br>
 
   <p>Erstelle deine eigene Einkaufs-Gruppe:</p>
-  <input type="text" placeholder="Gruppenname"> <br>
-  <textarea>Mitglieder:</textarea>
-  <input type="text" placeholder="User hinzufügen"> <br>
+  <input  style="width:100%" id="tfGroupNameNew" type="text" placeholder="Gruppenname"> <br> <br>
+  
+  <textarea>Mitglieder:</textarea><br><br>
+  <input id="tfAddUser" type="text" placeholder="User hinzufügen"> <br>
+  <button style="width:100%" id="btnAddUser" ion-button>User zur eigenen Gruppe hinzufügen</button>
 
-  <button ion-button>User zur eigenen Gruppe hinzufügen</button>
-
-  <button ion-button>Neue eigene Gruppe erstellen</button>
+  <button style="width:100%" id="btnCreateNewGroup" ion-button>Neue eigene Gruppe erstellen</button>
 
 
 </ion-content>
