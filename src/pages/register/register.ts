@@ -20,6 +20,6 @@ export class RegisterPage {
   }
 
   async register(user: User){
-    const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password);
+    const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email,user.password);
   }
 }
