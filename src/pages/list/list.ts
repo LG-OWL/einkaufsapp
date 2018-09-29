@@ -18,9 +18,9 @@ export class ListPage {
   items: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {
-    GroupsPage.itemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
+    GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
 
-    this.items = GroupsPage.itemsRef.snapshotChanges().pipe(
+    this.items = GroupsPage.listitemsRef.snapshotChanges().pipe(
       map(changes => 
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
@@ -28,7 +28,7 @@ export class ListPage {
   }
 
   deleteItem(key: string) {
-    GroupsPage.itemsRef.remove(key);
+    GroupsPage.listitemsRef.remove(key);
   }
 
   load(){

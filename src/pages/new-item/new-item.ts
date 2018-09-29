@@ -27,7 +27,7 @@ export class NewItemPage {
   }
 
   addItem(newName: string, newAmount: string) {
-    GroupsPage.itemsRef.push({ name: newName, amount: newAmount });
+    GroupsPage.listitemsRef.push({ name: newName, amount: newAmount });
     this.navCtrl.push(ListPage);
   }
 

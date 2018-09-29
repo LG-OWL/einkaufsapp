@@ -22,9 +22,10 @@ export class GroupsPage {
 
   public static username: string
   public static listname: string
+  public static usersRef: AngularFireList<any>;
   public static listsRef: AngularFireList<any>;
-  public static membersRef: AngularFireList<any>;
-  public static itemsRef: AngularFireList<any>;
+  public static listmembersRef: AngularFireList<any>;
+  public static listitemsRef: AngularFireList<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {    
   }
@@ -37,11 +38,13 @@ export class GroupsPage {
     GroupsPage.username = "Jonas";
     GroupsPage.listname = listname;
 
+    GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
     GroupsPage.listsRef = this.afDatabase.list('/lists');
-    GroupsPage.itemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
-    GroupsPage.membersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
+    GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
+    GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
 
-    GroupsPage.membersRef.push({ name: GroupsPage.username });   
+    GroupsPage.usersRef.push({ listname: GroupsPage.listname })
+    GroupsPage.listmembersRef.push({ name: GroupsPage.username });   
 
     this.navCtrl.push(ListPage);
   }
@@ -64,10 +67,12 @@ export class GroupsPage {
 
       // Falls die Liste existiert, dieser beitreten, sonst Fehlermeldung ausgeben
       if (listfound) {
-        GroupsPage.itemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
-        GroupsPage.membersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
+        GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
+        GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
+        GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
 
-        GroupsPage.membersRef.push({ name: GroupsPage.username }); 
+        GroupsPage.usersRef.push({ listname: GroupsPage.listname })
+        GroupsPage.listmembersRef.push({ name: GroupsPage.username }); 
         
         subscription.unsubscribe();
         this.navCtrl.push(ListPage);
