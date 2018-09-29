@@ -2,12 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-<<<<<<< HEAD
 import { NewItemPage } from '../new-item/new-item';
-=======
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
->>>>>>> 143756d11ba649dad90ca8f042b7ad4351d51b30
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'page-list',
@@ -48,33 +45,9 @@ export class ListPage {
   deleteItem(key: string) {
     this.itemsRef.remove(key);
   }
-<<<<<<< HEAD
 
   load(){
     console.log("test")
     this.navCtrl.push(NewItemPage);
   }
 }
-=======
-  deleteEverything() {
-    this.itemsRef.remove();
-  }
-
-}
-
-
-//<ion-content>
-//    <ul>
-//      <li *ngFor="let item of items | async">
-//        <input type="text" #updatename [value]="item.name" />
-//        <input type="text" #updateamount [value]="item.amount" />
-//       <button (click)="updateItem(item.key, updatename.value, updateamount.value)">Update</button>
-//        <button (click)="deleteItem(item.key)">Delete</button>
-//      </li>
-//    </ul>
-//    <input type="text" #newitemname />
-//    <input type="text" #newitemamount />
-//    <button (click)="addItem(newitemname.value, newitemamount.value)">Add</button>
-//    <button (click)="deleteEverything()">Delete All</button>
-//</ion-content>
->>>>>>> 143756d11ba649dad90ca8f042b7ad4351d51b30
