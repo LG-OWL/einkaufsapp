@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { NewItemPage } from '../new-item/new-item';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
 })
 export class ListPage {
+  
   selectedItem: any;
   items: Array<{title: string, amount: string}>;
   itemNumber: number;
@@ -34,5 +36,10 @@ export class ListPage {
 
   itemTapped(event, item) {
     
+  }
+
+  load(){
+    console.log("test")
+    this.navCtrl.push(NewItemPage);
   }
 }

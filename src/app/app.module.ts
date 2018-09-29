@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { NewItemPage } from '../pages/new-item/new-item';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    NewItemPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    NewItemPage
   ],
   providers: [
     StatusBar,
