@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../Models/user';
 import {AngularFireAuth} from "angularfire2/auth";
+import { Observable, Subject } from 'rxjs';
+import {GroupsPage} from '../groups/groups';
+import {RegisterPage}from '../register/register';
 
 @IonicPage()
 @Component({
@@ -19,18 +22,17 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  async login(user: User){
+  async login(user:User){
     try{
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
-      if(result){
-        this.navCtrl.push('GroupsPage');
-      }
+      const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
+      if(result)
+        this.navCtrl.push(GroupsPage);
     }catch(e){
-      
+      alert("Fehler");
     }
   }
 
   register(){
-    this.navCtrl.push('RegisterPage');
+    this.navCtrl.push(RegisterPage);
   }
 }

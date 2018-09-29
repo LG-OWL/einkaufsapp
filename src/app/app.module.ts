@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { NewItemPage } from '../pages/new-item/new-item';
 import { LoginPage } from '../pages/login/login';
-import { GroupsPage } from '../pages/groups/groups';
+import { RegisterPage} from '../pages/register/register';
+import {GroupsPage} from '../pages/groups/groups';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,25 +23,26 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     MyApp,
     HomePage,
     ListPage,
-    NewItemPage,
     LoginPage,
-    GroupsPage
+    GroupsPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-    NewItemPage,
     LoginPage,
-    GroupsPage
+    GroupsPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
