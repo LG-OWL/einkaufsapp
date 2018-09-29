@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { GroupsPage } from '../pages/groups/groups';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +21,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    GroupsPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    GroupsPage
   ],
   providers: [
     StatusBar,
