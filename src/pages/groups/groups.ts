@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AlertController } from 'ionic-angular';
 
 import { ListPage } from '../list/list';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the GroupsPage page.
@@ -71,11 +72,9 @@ export class GroupsPage {
   joinlist(listname: string){
     GroupsPage.listname = listname;
 
-    // Prüfen, ob die Gruppe existiert
-    let listfound: boolean = false;
-
+    // Prüfen, ob die Liste existiert
+    var listfound: boolean = false;
     GroupsPage.listsRef = this.afDatabase.list('/lists');
-
     let subscription = GroupsPage.listsRef.snapshotChanges().subscribe(actions => { 
       actions.forEach(action => {
         if (action.key === listname) {
