@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { GroupsPage } from '../pages/groups/groups';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { RegisterPage } from '../pages/register/register';
+import { EinkaufbarcodePage } from '../pages/einkaufbarcode/einkaufbarcode';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,7 +36,8 @@ import { Camera } from '@ionic-native/camera';
     LoginPage,
     GroupsPage,
     ScannerPage,
-    RegisterPage
+    RegisterPage,
+    EinkaufbarcodePage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,9 @@ import { Camera } from '@ionic-native/camera';
     LoginPage,
     GroupsPage,
     ScannerPage,
-    RegisterPage
+    RegisterPage,
+    NewItemPage,
+    EinkaufbarcodePage
   ],
   providers: [
     StatusBar,

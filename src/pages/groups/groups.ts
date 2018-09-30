@@ -83,6 +83,7 @@ export class GroupsPage {
         GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
 
         GroupsPage.usersRef.push({ listname: GroupsPage.listname })
+        console.log(GroupsPage.username);
         GroupsPage.listmembersRef.push({ name: GroupsPage.username }); 
         
         subscription.unsubscribe();
