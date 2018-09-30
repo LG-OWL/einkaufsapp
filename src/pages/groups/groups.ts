@@ -45,7 +45,7 @@ export class GroupsPage {
     
     // Falls die Liste existiert, dieser beitreten, sonst Fehlermeldung ausgeben
     if (!listfound) {
-      GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
+      GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.email + '/lists');
       GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
       GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
   
@@ -78,12 +78,11 @@ export class GroupsPage {
 
       // Falls die Liste existiert, dieser beitreten, sonst Fehlermeldung ausgeben
       if (listfound) {
-        GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
+        GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.email + '/lists');
         GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
         GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
 
         GroupsPage.usersRef.push({ listname: GroupsPage.listname })
-        console.log(GroupsPage.username);
         GroupsPage.listmembersRef.push({ name: GroupsPage.username }); 
         
         subscription.unsubscribe();
