@@ -11,6 +11,7 @@ import { RegisterPage } from '../pages/register/register';
 import { GroupsPage } from '../pages/groups/groups';
 import { NewItemPage } from '../pages/new-item/new-item';
 import {EinkaufbarcodePage} from '../pages/einkaufbarcode/einkaufbarcode';
+import {ScannerPage} from '../pages/scanner/scanner';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,7 +31,8 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     GroupsPage,
     RegisterPage,
     NewItemPage,
-    EinkaufbarcodePage
+    EinkaufbarcodePage,
+    ScannerPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     GroupsPage,
     RegisterPage,
     NewItemPage,
-    EinkaufbarcodePage
+    EinkaufbarcodePage,
+    ScannerPage
   ],
   providers: [
     StatusBar,

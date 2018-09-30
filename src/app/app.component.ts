@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { GroupsPage } from '../pages/groups/groups';
 import { EinkaufbarcodePage} from '../pages/einkaufbarcode/einkaufbarcode';
+import { ScannerPage } from '../pages/scanner/scanner';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Übersicht', component: HomePage},
-      { title: 'Liste erstellen', component: GroupsPage }
+      { title: 'Liste erstellen', component: GroupsPage },
+      { title: 'Barcode-Scanner', component: EinkaufbarcodePage},
+      { title: 'OCR-Scanner',component: ScannerPage}
     ];
 
   }
