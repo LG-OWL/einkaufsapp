@@ -53,4 +53,5 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}
