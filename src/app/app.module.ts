@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { GroupsPage } from '../pages/groups/groups';
 import { NewItemPage } from '../pages/new-item/new-item';
+import { EinkaufbarcodePage } from '../pages/einkaufbarcode/einkaufbarcode';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +28,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     LoginPage,
     GroupsPage,
     RegisterPage,
-    NewItemPage
+    NewItemPage,
+    EinkaufbarcodePage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     LoginPage,
     GroupsPage,
     RegisterPage,
-    NewItemPage
+    NewItemPage,
+    EinkaufbarcodePage
   ],
   providers: [
     StatusBar,
