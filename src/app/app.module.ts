@@ -16,7 +16,6 @@ import { EinkaufbarcodePage } from '../pages/einkaufbarcode/einkaufbarcode';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { environment } from '../environment/environment';
 import { environment } from '../environment/environment-dev';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';

@@ -41,3 +41,6 @@ src/app/app.module.ts
 src/pages/groups/groups.ts
 src/pages/home/home.ts
 src/environment/environment-dev.ts
+src/app/app.module.ts
+*.txt
+src/environment/environment.ts
