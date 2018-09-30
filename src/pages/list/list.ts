@@ -4,6 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { NewItemPage } from '../new-item/new-item';
 import { GroupsPage } from '../groups/groups';
+import { ChatPage } from '../chat/chat';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AlertController } from 'ionic-angular';
@@ -33,6 +34,10 @@ export class ListPage {
 
   load(){
     this.navCtrl.push(NewItemPage);
+  }
+
+  chat(){
+    this.navCtrl.push(ChatPage);
   }
 
 }

@@ -12,6 +12,7 @@ import { GroupsPage } from '../pages/groups/groups';
 import { NewItemPage } from '../pages/new-item/new-item';
 import {EinkaufbarcodePage} from '../pages/einkaufbarcode/einkaufbarcode';
 import {ScannerPage} from '../pages/scanner/scanner';
+import {ChatPage} from '../pages/chat/chat';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,7 +33,8 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     RegisterPage,
     NewItemPage,
     EinkaufbarcodePage,
-    ScannerPage
+    ScannerPage,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import {BarcodeScanner} from '@ionic-native/barcode-scanner';
     RegisterPage,
     NewItemPage,
     EinkaufbarcodePage,
-    ScannerPage
+    ScannerPage,
+    ChatPage
   ],
   providers: [
     StatusBar,
