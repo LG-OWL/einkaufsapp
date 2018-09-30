@@ -37,7 +37,9 @@ import { Camera } from '@ionic-native/camera';
     GroupsPage,
     ScannerPage,
     RegisterPage,
-    EinkaufbarcodePage
+    NewItemPage,
+    EinkaufbarcodePage,
+    ScannerPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { Camera } from '@ionic-native/camera';
     ScannerPage,
     RegisterPage,
     NewItemPage,
-    EinkaufbarcodePage
+    EinkaufbarcodePage,
+    ScannerPage
   ],
   providers: [
     StatusBar,
