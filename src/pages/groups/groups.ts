@@ -15,6 +15,7 @@ import { HomePage } from '../home/home';
 export class GroupsPage {
 
   public static username: string
+  public static email: string
   public static listname: string
   public static usersRef: AngularFireList<any>;
   public static listsRef: AngularFireList<any>;
@@ -42,9 +43,9 @@ export class GroupsPage {
       }
     });
     
-    // Falls die Liste existiert, dieser beitreten, sonst Fehlermeldung ausgeben
+    // Falls die Liste nicht existiert, diese erstellen, sonst Fehlermeldung ausgeben
     if (!listfound) {
-      GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
+      GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.email + '/lists');
       GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
       GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
   
@@ -77,7 +78,7 @@ export class GroupsPage {
 
       // Falls die Liste existiert, dieser beitreten, sonst Fehlermeldung ausgeben
       if (listfound) {
-        GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.username);
+        GroupsPage.usersRef = this.afDatabase.list('/users/' + GroupsPage.email + '/lists');
         GroupsPage.listitemsRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/items');
         GroupsPage.listmembersRef = this.afDatabase.list('/lists/' + GroupsPage.listname + '/members')
 

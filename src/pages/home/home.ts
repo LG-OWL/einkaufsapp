@@ -19,7 +19,7 @@ export class HomePage {
   listsRef: AngularFireList<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {
-    this.listsRef = this.afDatabase.list('/users/' + GroupsPage.username);
+    this.listsRef = this.afDatabase.list('/users/' + GroupsPage.email + '/lists');
 
     // Listen laden
     this.lists = this.listsRef.snapshotChanges().pipe(
