@@ -1,16 +1,16 @@
 <ion-header>
-    <ion-navbar hideBackButton color="primary">
-       <ion-title>Home</ion-title>
-     </ion-navbar>
+  <ion-navbar hideBackButton color="primary">
+     <ion-title>Home</ion-title>
+   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-      <button ion-item *ngFor="let list of lists | async" (click)="openList(list.listname)">
-        {{list.listname}}
-      </button>
-  </ion-list>
-  <ion-fab bottom right>
-    <button ion-fab class="button" (click)="load()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
-  </ion-content>
+<ion-list>
+    <button ion-item *ngFor="let list of lists | async" (click)="openList(list.listname)">
+      {{list.listname}}
+    </button>
+</ion-list>
+<ion-fab bottom right>
+  <button ion-fab class="button" (click)="load()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+</ion-content>
