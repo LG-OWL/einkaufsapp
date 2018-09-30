@@ -1,22 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { LoginPage } from '../login/login';
+import { NavController, NavParams } from 'ionic-angular';
+
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { ListPage } from '../list/list';
 import { GroupsPage } from '../groups/groups';
-import { ScannerPage } from '../scanner/scanner';
 import { Observable } from 'rxjs';
-import { AngularFireList } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
+import { AlertController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-home',
+  selector: 'page-list',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
   lists: Observable<any[]>;
   listsRef: AngularFireList<any>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {
+    this.listsRef = this.afDatabase.list('/users/' + GroupsPage.email + '/lists');
 
     // Listen laden
     this.lists = this.listsRef.snapshotChanges().pipe(
@@ -26,15 +29,17 @@ export class HomePage {
     );
   }
 
-  load(){
-    this.navCtrl.push(LoginPage);
+  deleteList(key: string) {
+    this.listsRef.remove(key);
   }
 
-  loadGroupPage(){
+  openList(listname: string) {
+    GroupsPage.listname = listname;
+    this.navCtrl.push(ListPage);
+  }
+
+  load(){
     this.navCtrl.push(GroupsPage);
   }
-
-  loadScannerPage(){
-    this.navCtrl.push(ScannerPage);
-  }
+  
 }

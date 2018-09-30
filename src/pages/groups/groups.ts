@@ -20,6 +20,7 @@ export class GroupsPage {
   public static listsRef: AngularFireList<any>;
   public static listmembersRef: AngularFireList<any>;
   public static listitemsRef: AngularFireList<any>;
+  static email: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {    
   }

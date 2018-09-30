@@ -38,3 +38,5 @@ src/app/app.module.ts
 src/app/app.module.ts
 src/app/app.module.ts
 *.json
+src/pages/groups/groups.ts
+src/pages/home/home.ts
