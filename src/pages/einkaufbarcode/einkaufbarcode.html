@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>einkaufbarcode</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="!result" style="position:relative;top:50%;transform:translateY(-50%)">
+    <ion-card-content>
+      <p>Scanne den Barcode</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="result">
+    <ion-card-content>
+      <p>Folgendes Produkt zu der List hinzufügen?: {{result.text}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="scanBarcode()">
+      <ion-icon name="barcode"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
