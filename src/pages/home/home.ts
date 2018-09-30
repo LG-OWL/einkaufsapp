@@ -14,13 +14,14 @@ import { AlertController } from 'ionic-angular';
 })
 
 export class HomePage {
-  
+
   lists: Observable<any[]>;
   listsRef: AngularFireList<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public afDatabase: AngularFireDatabase, public alertCtrl: AlertController) {
     this.listsRef = this.afDatabase.list('/users/' + GroupsPage.username);
 
+    // Listen laden
     this.lists = this.listsRef.snapshotChanges().pipe(
       map(changes => 
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
