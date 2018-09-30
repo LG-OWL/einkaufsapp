@@ -15,7 +15,7 @@ import { EinkaufbarcodePage} from '../pages/einkaufbarcode/einkaufbarcode';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
-  rootPage: any = EinkaufbarcodePage//LoginPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
