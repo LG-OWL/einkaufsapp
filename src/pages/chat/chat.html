@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chat</ion-title>
+    <ion-title>Chat</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -41,7 +41,7 @@
       
     </button>
     <textarea #chat_input
-              placeholder="Text Input"
+              placeholder="Chatnachricht"
               [(ngModel)]="message"
               (keyup.enter)="sendMessage()"
               (focusin)="onFocus()">
