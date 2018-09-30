@@ -1,24 +1,20 @@
 <ion-header>
-    <ion-navbar hideBackButton color="primary">
-       <ion-title>Login</ion-title>
-     </ion-navbar>
+  <ion-navbar hideBackButton color="primary">
+     <ion-title>Login</ion-title>
+   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label floating>Benutzername</ion-label>
-    <ion-input type="text" [(ngModel)]="user.username"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Passwort</ion-label>
-    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
+<ion-item>
+  <ion-label floating>Email</ion-label>
+  <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label floating>Passwort</ion-label>
+  <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+</ion-item>
 
-  <button ion-button secondary full (click)="login(user)">Login</button>
-  <p align="center">oder</p>
-  <button ion-button secondary full (click)="register()">Registrieren</button>
+<button ion-button secondary full (click)="login(user)">Login</button>
+<p align="center">oder</p>
+<button ion-button secondary full (click)="register()">Registrieren</button>
 </ion-content>

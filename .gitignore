@@ -40,3 +40,4 @@ src/app/app.module.ts
 *.json
 src/pages/groups/groups.ts
 src/pages/home/home.ts
+src/environment/environment-dev.ts
