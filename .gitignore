@@ -34,3 +34,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 src/app/app.module.ts
+src/environment/environment-dev.ts
