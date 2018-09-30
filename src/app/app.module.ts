@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -9,6 +10,7 @@ import { NewItemPage } from '../pages/new-item/new-item';
 import { LoginPage } from '../pages/login/login';
 import { GroupsPage } from '../pages/groups/groups';
 import { ScannerPage } from '../pages/scanner/scanner';
+import { RegisterPage } from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +19,7 @@ import { environment } from '../environment/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 // For the OCR (Tesseract)
 import { Camera } from '@ionic-native/camera';
@@ -31,7 +34,8 @@ import { Camera } from '@ionic-native/camera';
     NewItemPage,
     LoginPage,
     GroupsPage,
-    ScannerPage
+    ScannerPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { Camera } from '@ionic-native/camera';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    //NgProgressModule.forRoot()
+    //NgProgressModule.forRoot(),
+    HttpClientModule
 
   ],
   bootstrap: [IonicApp],
@@ -51,13 +56,16 @@ import { Camera } from '@ionic-native/camera';
     NewItemPage,
     LoginPage,
     GroupsPage,
-    ScannerPage
+    ScannerPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    HttpClientModule,
+    BarcodeScanner
   ]
 })
 

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../Models/user';
-import {AngularFireAuth} from "angularfire2/auth";
+import { AngularFireAuth} from "angularfire2/auth";
 import { Observable, Subject } from 'rxjs';
-import {GroupsPage} from '../groups/groups';
-import {HomePage} from '../home/home';
-import {RegisterPage}from '../register/register';
+import { GroupsPage} from '../groups/groups';
+import { HomePage} from '../home/home';
+import { RegisterPage}from '../register/register';
 
 @IonicPage()
 @Component({
