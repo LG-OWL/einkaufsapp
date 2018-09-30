@@ -7,8 +7,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
-import { RegisterPage} from '../pages/register/register';
-import {GroupsPage} from '../pages/groups/groups';
+import { RegisterPage } from '../pages/register/register';
+import { GroupsPage } from '../pages/groups/groups';
+import { NewItemPage } from '../pages/new-item/new-item';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +26,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ListPage,
     LoginPage,
     GroupsPage,
-    RegisterPage
+    RegisterPage,
+    NewItemPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ListPage,
     LoginPage,
     GroupsPage,
-    RegisterPage
+    RegisterPage,
+    NewItemPage
   ],
   providers: [
     StatusBar,
@@ -50,4 +53,5 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}

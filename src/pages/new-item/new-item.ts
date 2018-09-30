@@ -5,12 +5,6 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { ListPage } from '../list/list';
 import { GroupsPage } from '../groups/groups';
 
-/**
- * Generated class for the NewItemPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

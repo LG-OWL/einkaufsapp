@@ -4,6 +4,7 @@ import { User } from '../../Models/user';
 import {AngularFireAuth} from "angularfire2/auth";
 import { Observable, Subject } from 'rxjs';
 import {GroupsPage} from '../groups/groups';
+import {HomePage} from '../home/home';
 import {RegisterPage}from '../register/register';
 
 @IonicPage()
@@ -26,8 +27,10 @@ export class LoginPage {
   async login(user:User){
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
+      // Usernamen speichern
+      GroupsPage.username = user.username;
       if(result)
-        this.navCtrl.push(GroupsPage);
+        this.navCtrl.push(HomePage);
     }catch(e){
       alert("Fehler");
     }
