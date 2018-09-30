@@ -12,6 +12,7 @@ import {RegisterPage}from '../register/register';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  [x: string]: any;
 
   user = {} as User;
 
