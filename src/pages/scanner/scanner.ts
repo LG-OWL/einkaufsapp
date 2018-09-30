@@ -11,7 +11,7 @@ import /*as*/Tesseract from 'tesseract.js';
 })
 export class ScannerPage {
   
-  /*selectedImage: string;
+  selectedImage: string;
   imageText: string;
 
   constructor(
@@ -29,12 +29,12 @@ export class ScannerPage {
         {
           text: 'Use Library',
           handler: () => {
-           // this.getPicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+           this.getPicture(this.camera.PictureSourceType.PHOTOLIBRARY);
           }
         }, {
           text: 'Capture Image', 
           handler: () => {
-           // this.getPicture(this.camera.PictureSourceType.CAMERA);
+           this.getPicture(this.camera.PictureSourceType.CAMERA);
           }
         }, {
           text:'Cancel',
@@ -55,7 +55,7 @@ export class ScannerPage {
       saveToPhotoAlbum: false,
       correctOrientation: true
     }).then(imageData => {
-     // this.selectedImage = 'data:image/jpeg;base64,${imageData}'/*+ imageData;
+     this.selectedImage = 'data:image/jpeg;base64,'+imageData;
       console.log(imageData);
       
     });
@@ -75,6 +75,6 @@ export class ScannerPage {
     .finally(resultOrError => {
       //this.progress.complete();
     });
-  }*/
+  }
 
 }
