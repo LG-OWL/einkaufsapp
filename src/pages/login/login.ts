@@ -13,6 +13,7 @@ import {RegisterPage}from '../register/register';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  [x: string]: any;
 
   user = {} as User;
 
@@ -26,6 +27,7 @@ export class LoginPage {
   async login(user:User){
     try{
       const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
+      // Usernamen speichern
       GroupsPage.username = user.username;
       if(result)
         this.navCtrl.push(HomePage);
