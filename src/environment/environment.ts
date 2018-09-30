@@ -7,5 +7,11 @@ export const environment = {
         projectId: "einkaufsapp-c50ea",
         storageBucket: "einkaufsapp-c50ea.appspot.com",
         messagingSenderId: "332921836730"
+        apiKey: "api",
+        authDomain: "domain",
+        databaseURL: "url",
+        projectId: "id",
+        storageBucket: "bucket",
+        messagingSenderId: "senderid"
     }
 };
