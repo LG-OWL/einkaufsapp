@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { GroupsPage } from '../pages/groups/groups';
 import { NewItemPage } from '../pages/new-item/new-item';
+import {EinkaufbarcodePage} from '../pages/einkaufbarcode/einkaufbarcode';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,6 +19,7 @@ import { environment } from '../environment/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     LoginPage,
     GroupsPage,
     RegisterPage,
-    NewItemPage
+    NewItemPage,
+    EinkaufbarcodePage
   ],
   imports: [
     BrowserModule,
@@ -45,12 +48,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     LoginPage,
     GroupsPage,
     RegisterPage,
-    NewItemPage
+    NewItemPage,
+    EinkaufbarcodePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BarcodeScanner
   ]
 })
 

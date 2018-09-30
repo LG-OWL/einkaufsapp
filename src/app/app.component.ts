@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { GroupsPage } from '../pages/groups/groups';
+import { EinkaufbarcodePage} from '../pages/einkaufbarcode/einkaufbarcode';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,7 +15,7 @@ import { GroupsPage } from '../pages/groups/groups';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
-  rootPage: any = LoginPage;
+  rootPage: any = EinkaufbarcodePage//LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
